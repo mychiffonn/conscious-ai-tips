@@ -1,0 +1,52 @@
+<article
+  class="container tip-card"
+  data-tip-id="{{id}}"
+  data-category="{{category}}"
+  data-impact="{{impact}}"
+  data-effort="{{effort}}"
+  data-cost="{{cost}}"
+>
+  <a href="/{{id}}">
+    {{#image}}
+    <div class="tip-image">
+      <img src="/images/{{image}}" alt="{{title}}" loading="lazy" />
+    </div>
+    {{/image}}
+
+    <header>
+      <div class="category-meta-row">
+        <span class="tip-category">{{category}}</span>
+        <div class="tip-meta">
+          <div class="meta-item">
+            <img
+              src="/icons/impact_{{impact}}.svg"
+              alt="{{impact_semantic}} impact"
+              class="metric-icon"
+            />
+            <span class="meta-value">{{impact_semantic}} impact</span>
+          </div>
+          <div class="meta-item">
+            <img
+              src="/icons/effort_{{effort}}.svg"
+              alt="{{effort_semantic}} effort"
+              class="metric-icon"
+            />
+            <span class="meta-value">{{effort_semantic}} effort</span>
+          </div>
+          <div class="meta-item">
+            <img
+              src="/icons/cost_{{cost}}.svg"
+              alt="{{cost_semantic}} cost"
+              class="metric-icon"
+            />
+            <span class="meta-value">{{cost_semantic}} cost</span>
+          </div>
+        </div>
+      </div>
+
+      <h3>{{title}}</h3>
+    </header>
+
+    <p class="tip-description">{{description}}</p>
+  </a>
+</article>

@@ -1,0 +1,56 @@
+<header>
+  {{#image}}
+  <div class="tip-image">
+    <img src="/images/{{image}}" alt="{{title}}" loading="lazy" />
+  </div>
+  {{/image}}
+  <div class="tip-info">
+    <div class="category-meta-row">
+      <span class="tip-category">{{category}}</span>
+      <div class="tip-meta">
+        <div class="meta-item">
+          <img
+            src="/icons/impact_{{impact}}.svg"
+            alt="{{impact_semantic}} impact"
+            class="metric-icon"
+          />
+          <span class="meta-value">{{impact_semantic}} impact</span>
+        </div>
+        <div class="meta-item">
+          <img
+            src="/icons/effort_{{effort}}.svg"
+            alt="{{effort_semantic}} effort"
+            class="metric-icon"
+          />
+          <span class="meta-value">{{effort_semantic}} effort</span>
+        </div>
+        <div class="meta-item">
+          <img
+            src="/icons/cost_{{cost}}.svg"
+            alt="{{cost_semantic}} cost"
+            class="metric-icon"
+          />
+          <span class="meta-value">{{cost_semantic}} cost</span>
+        </div>
+      </div>
+    </div>
+    <h1>{{title}}</h1>
+    <p class="tip-description">{{description}}</p>
+  </div>
+</header>
+
+<section class="tip-content">
+  <h2>About This Tip</h2>
+  <p>{{detailed_description}}</p>
+
+  {{#implementation_steps}}
+  <div class="implementation-steps">
+    <h3>Implementation Steps</h3>
+    <ol>
+      {{#steps}}
+      <li>{{.}}</li>
+      {{/steps}}
+    </ol>
+  </div>
+  {{/implementation_steps}}
+</section>

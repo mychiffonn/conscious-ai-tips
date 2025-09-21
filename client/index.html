@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/ai.svg" type="image/svg+xml">
+    <title>Conscious AI Usage - Tips for Mindful AI Consumption</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="container">
+      <nav>
+        <a href="/"><h1>🧠 Conscious AI</h1></a>
+        <p>Tips for mindful and sustainable AI usage</p>
+      </nav>
+    </header>
+
+    <main class="container">
+      <p>
+        AI tools are powerful, but they come with financial, environmental,
+        and social costs. These tips help you use AI more consciously and
+        effectively.
+      </p>
+
+      <section class="filter-controls">
+        <div class="filter-row">
+          <div class="filter-group">
+            <label for="category-filter">Filter by category:</label>
+            <select id="category-filter">
+              <option value="">All categories</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="sort-by">Sort by:</label>
+            <select id="sort-by">
+              <option value="">Default</option>
+              <option value="impact-asc">Impact (Low to High)</option>
+              <option value="impact-desc">Impact (High to Low)</option>
+              <option value="effort-asc">Effort (Low to High)</option>
+              <option value="effort-desc">Effort (High to Low)</option>
+              <option value="cost-asc">Cost (Low to High)</option>
+              <option value="cost-desc">Cost (High to Low)</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <div id="tips-count"></div>
+
+      <section id="tips-container" class="tips-grid"></section>
+
+      <div id="loading" aria-busy="true">Loading tips...</div>
+    </main>
+
+    <footer class="container">
+      <small>
+        💡 Tips for conscious AI usage |
+        <a
+          href="https://github.com/mychiffonn/conscious-ai-tips"
+          target="_blank"
+          rel="noopenner nofollow"
+          >Contribute on GitHub</a
+        >
+      </small>
+    </footer>
+
+    <script src="/scripts/common.js"></script>
+    <script src="/scripts/main.js"></script>
+  </body>
+</html>

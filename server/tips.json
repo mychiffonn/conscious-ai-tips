@@ -1,0 +1,140 @@
+{
+  "tips": [
+    {
+      "id": "search-engine-first",
+      "title": "Opt for search engines instead of AI tools",
+      "category": "Alternative",
+      "effort": 1,
+      "impact": 2,
+      "cost": 0,
+      "description": "Use traditional search engines for factual information before turning to AI chatbots",
+      "detailed_description": "Traditional search engines are more energy-efficient for basic information retrieval. They consume significantly less computational power than large language models and often provide more up-to-date information. Reserve AI tools for tasks that require synthesis, analysis, or creative thinking.",
+      "implementation_steps": [
+        "Try Google, DuckDuckGo, or Bing first",
+        "Use specific keywords and search operators",
+        "Check multiple sources for accuracy",
+        "Only use AI if you need synthesis or analysis"
+      ],
+      "image": "search-engine.jpg"
+    },
+    {
+      "id": "disable-ai-overview",
+      "title": "Add -ai to disable AI overview in search",
+      "category": "No AI",
+      "effort": 1,
+      "impact": 1,
+      "cost": 0,
+      "description": "Prevent automatic AI-generated summaries in search results to reduce unnecessary processing",
+      "detailed_description": "Many search engines now automatically generate AI overviews for queries. Adding '-ai' to your search terms can disable this feature, reducing computational load and energy consumption while often providing more direct access to original sources.",
+      "implementation_steps": [
+        "Add '-ai' to the end of your search query",
+        "Use quotes for exact phrase matching",
+        "Try alternative search engines with less AI integration",
+        "Bookmark frequently searched topics"
+      ],
+      "image": "hide-ai-search.webp"
+    },
+    {
+      "id": "smaller-models",
+      "title": "Choose smaller, efficient AI models",
+      "category": "Model",
+      "effort": 2,
+      "impact": 3,
+      "cost": 2,
+      "description": "Use lightweight models like GPT-3.5 instead of GPT-4 when the task doesn't require advanced reasoning",
+      "detailed_description": "Smaller models consume dramatically less energy and computational resources. GPT-3.5 uses roughly 10x less energy than GPT-4 per query. For many tasks like simple writing, basic coding, or straightforward questions, smaller models are perfectly adequate and much more sustainable.",
+      "implementation_steps": [
+        "Assess if your task truly needs the most advanced model",
+        "Try Claude Haiku, GPT-3.5, or Gemini Flash first",
+        "Use specialized models for specific tasks (code, math, etc.)",
+        "Monitor your usage and switch when appropriate"
+      ],
+      "image": "model-selection.jpg"
+    },
+    {
+      "id": "local-models",
+      "title": "Run AI models locally with Ollama or GPT4All",
+      "category": "Model",
+      "effort": 3,
+      "impact": 3,
+      "cost": 2,
+      "description": "Use local AI models to eliminate cloud computing and data transmission costs",
+      "detailed_description": "Running models locally eliminates the energy costs of data centers and network transmission. Tools like Ollama and GPT4All make it easy to run capable models on consumer hardware. While there's an initial setup cost, local models provide privacy benefits and can be more sustainable for heavy users.",
+      "implementation_steps": [
+        "Install Ollama or GPT4All on your computer",
+        "Download appropriate models for your hardware",
+        "Test performance vs. cloud alternatives",
+        "Use for sensitive or frequent tasks"
+      ],
+      "image": "local-models.png"
+    },
+    {
+      "id": "better-prompts",
+      "title": "Craft precise prompts to reduce iterations",
+      "category": "Prompt",
+      "effort": 2,
+      "impact": 2,
+      "cost": 0,
+      "description": "Write clear, detailed prompts to get better results in fewer attempts",
+      "detailed_description": "Poor prompts lead to multiple back-and-forth conversations or edits, multiplying energy consumption. Investing time in crafting specific, well-structured prompts with clear requirements, examples, and constraints dramatically reduces the number of queries needed to achieve your desired outcome.",
+      "implementation_steps": [
+        "Be specific about format, length, and style requirements",
+        "Provide examples of desired output",
+        "Include relevant context and constraints",
+        "Use prompt templates for recurring tasks"
+      ],
+      "image": "prompt-engineering.jpeg"
+    },
+    {
+      "id": "human-consultation",
+      "title": "Consult humans for complex advice",
+      "category": "Alternative",
+      "effort": 2,
+      "impact": 3,
+      "cost": 1,
+      "description": "Seek human expertise for nuanced decisions instead of relying solely on AI",
+      "detailed_description": "Humans excel at providing contextual advice, emotional support, and nuanced decision-making that considers real-world complexities. For important decisions, relationship advice, or domain-specific expertise, human consultation is often more valuable and environmentally responsible than multiple AI queries.",
+      "implementation_steps": [
+        "Identify experts or experienced people in relevant fields",
+        "Prepare specific questions before consulting",
+        "Use professional networks or mentorship programs",
+        "Combine human insights with AI research for best results"
+      ],
+      "image": "human-advice.jpg"
+    },
+    {
+      "id": "green-training",
+      "title": "Schedule model training during off-peak hours",
+      "category": "Development",
+      "effort": 3,
+      "impact": 2,
+      "cost": 1,
+      "description": "Time intensive AI training when renewable energy is most available",
+      "detailed_description": "AI model training consumes enormous amounts of energy. Scheduling training during off-peak hours (typically overnight) when renewable energy is more abundant and grid demand is lower can significantly reduce carbon footprint. This requires planning but can cut emissions by 30-50%.",
+      "implementation_steps": [
+        "Research your local grid's renewable energy peaks",
+        "Schedule training jobs for overnight or weekend hours",
+        "Use cloud providers with renewable energy commitments",
+        "Monitor energy usage and carbon intensity"
+      ],
+      "image": "green-scheduling.jpg"
+    },
+    {
+      "id": "ai-free-days",
+      "title": "Implement regular AI-free periods",
+      "category": "No AI",
+      "effort": 2,
+      "impact": 2,
+      "cost": 0,
+      "description": "Designate specific times or days to work without AI assistance",
+      "detailed_description": "Regular breaks from AI tools help maintain critical thinking skills, reduce dependency, and lower environmental impact. AI-free periods encourage creative problem-solving, human collaboration, and can reveal tasks where AI wasn't actually necessary.",
+      "implementation_steps": [
+        "Choose specific days or hours to avoid AI tools",
+        "Plan alternative approaches for common tasks",
+        "Track what you accomplish without AI assistance",
+        "Reflect on which tasks truly benefit from AI"
+      ],
+      "image": "no-ai.jpg"
+    }
+  ]
+}
