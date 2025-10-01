@@ -1,16 +1,19 @@
-# WEB103 Project 1 - Conscious AI Usage Tips
+# WEB103 Project 2 - Conscious AI Usage Tips
 
 Submitted by: My (Chiffon) Nguyen
 
 About this web app: **A web application that provides tips for mindful and sustainable AI usage, helping users make conscious decisions about when and how to use AI tools effectively.**
 
-Time spent: 4 hours, including ideation and asset collection
+Time spent: 4 hours, mostly to debug database connection and search
 
 ## Required Features
 
 The following **required** functionality is completed:
 
 - [x] **The web app uses only HTML, CSS, and JavaScript without a frontend framework**
+- [x] **The web app is connected to a PostgreSQL database, with an appropriately structured database table for the list items**
+  - [x] **NOTE: Your walkthrough added to the README must include a view of your Render dashboard demonstrating that your Postgres database is available**
+  - [x]  **NOTE: Your walkthrough added to the README must include a demonstration of your table contents. Use the psql command 'SELECT * FROM tablename;' to display your table contents.**
 - [x] **The web app displays a title**
 - [x] **The web app displays at least five unique list items, each with at least three displayed attributes (such as title, text, and image)**
 - [x] **The user can click on each item in the list to see a detailed view of it, including all database fields**
@@ -21,23 +24,24 @@ The following **required** functionality is completed:
 
 The following **optional** features are implemented:
 
-- [x] The web app displays items in a unique format, such as cards rather than lists or animated list items
+- [ ] The user can search for items by a specific attribute
 
 The following **additional** features are implemented:
 
 - [x] Filter tips by category 
 - [x] Sort tips by impact, effort, or cost in ascending or descending order
 - [x] Filter and sort settings are persisted in the URL as params and can be shared
+- [x] Search by title and description
 
 ## Video Walkthrough
 
-Here's a walkthrough of implemented **required and optional** features:
+Here's a walkthrough of implemented **required** features from Project 1:
 
-<img src='previews/required.gif' title='Required Feature Walkthrough' alt='Required Feature Walkthroug' />
+<img src='previews/client.gif' title='Required Feature Walkthrough' alt='Required Feature Walkthroug' />
 
 And a walkthrough of additional features (persisted filter and sorting):
 
-<img src='previews/filter-sort.gif' title='GIF Walkthrough' alt='GIF Walkthrough' />
+<img src='previews/database+search.gif' title='GIF Walkthrough' alt='GIF Walkthrough' />
 
 ## Notes
 

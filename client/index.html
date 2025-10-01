@@ -28,6 +28,12 @@
 
       <section class="filter-controls">
         <div class="filter-row">
+          <div class="filter-group search-group">
+            <label for="search-input">Search tips:</label>
+            <input type="search" id="search-input" placeholder="Search by title, description, content, or category..." />
+          </div>
+        </div>
+        <div class="filter-row">
           <div class="filter-group">
             <label for="category-filter">Filter by category:</label>
             <select id="category-filter">
@@ -38,6 +44,10 @@
             <label for="sort-by">Sort by:</label>
             <select id="sort-by">
               <option value="">Default</option>
+              <option value="title-asc">Title (A to Z)</option>
+              <option value="title-desc">Title (Z to A)</option>
+              <option value="category-asc">Category (A to Z)</option>
+              <option value="category-desc">Category (Z to A)</option>
               <option value="impact-asc">Impact (Low to High)</option>
               <option value="impact-desc">Impact (High to Low)</option>
               <option value="effort-asc">Effort (Low to High)</option>

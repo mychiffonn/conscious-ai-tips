@@ -3,10 +3,12 @@ document.addEventListener("DOMContentLoaded", async function () {
   const loading = document.getElementById("loading")
   const categoryFilter = document.getElementById("category-filter")
   const sortBy = document.getElementById("sort-by")
+  const searchInput = document.getElementById("search-input")
   const tipsCount = document.getElementById("tips-count")
 
   let allTips = []
   let cardTemplate = ""
+  let searchTimeout = null
 
   // Load initial data
   try {
@@ -36,6 +38,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     // Set initial values from URL params
     if (params.get("category")) categoryFilter.value = params.get("category")
     if (params.get("sort")) sortBy.value = params.get("sort")
+    if (params.get("search")) searchInput.value = params.get("search")
 
     loading.style.display = "none"
     renderTips()
@@ -48,14 +51,22 @@ document.addEventListener("DOMContentLoaded", async function () {
   categoryFilter.addEventListener("change", handleFilterChange)
   sortBy.addEventListener("change", handleFilterChange)
 
+  // Search input with debouncing
+  searchInput.addEventListener("input", function () {
+    clearTimeout(searchTimeout)
+    searchTimeout = setTimeout(handleFilterChange, 300)
+  })
+
   async function handleFilterChange() {
     const category = categoryFilter.value
     const sort = sortBy.value
+    const search = searchInput.value.trim()
 
     // Update URL
     const params = new URLSearchParams()
     if (category) params.set("category", category)
     if (sort) params.set("sort", sort)
+    if (search) params.set("search", search)
 
     const newUrl =
       window.location.pathname +
@@ -75,22 +86,34 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   function renderTips() {
     container.innerHTML = ""
+    const currentSearch = searchInput.value.trim()
+    
     allTips.forEach((tip) => {
-      const card = createTipCard(tip, cardTemplate)
+      const card = createTipCard(tip, cardTemplate, currentSearch)
       container.appendChild(card)
     })
-    
+
     // Update tips count
     const count = allTips.length
     tipsCount.textContent = `Showing ${count} tip${count !== 1 ? 's' : ''}`
   }
 })
 
-function createTipCard(tip, template) {
-  // Prepare template data
+function createTipCard(tip, template, searchTerm = '') {
+  // Prepare template data with highlighted content
   const templateData = {
     ...tip,
-    ...getSemanticLabels(tip)
+    ...getSemanticLabels(tip),
+    // Keep original title for alt text
+    title_alt: tip.title
+  }
+
+  // Highlight search terms if search is active
+  if (searchTerm) {
+    templateData.title = highlightSearchTerm(tip.title, searchTerm)
+    templateData.description = highlightSearchTerm(tip.description, searchTerm)
+    templateData.category = highlightSearchTerm(tip.category, searchTerm)
+    // title_alt remains unhighlighted for use in HTML attributes
   }
 
   // Parse template with data
@@ -102,4 +125,17 @@ function createTipCard(tip, template) {
   const card = wrapper.firstElementChild
 
   return card
+}
+
+function highlightSearchTerm(text, searchTerm) {
+  if (!text || !searchTerm) return text
+  
+  // Escape special regex characters in search term
+  const escapedSearchTerm = searchTerm.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+  
+  // Create case-insensitive regex with word boundaries for better matching
+  const regex = new RegExp(`(${escapedSearchTerm})`, 'gi')
+  
+  // Replace matches with highlighted version
+  return text.replace(regex, '<mark class="search-highlight">$1</mark>')
 }

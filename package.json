@@ -1,8 +1,9 @@
 {
   "name": "conscious-ai-tips",
   "author": "My (Chiffon) Nguyen",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Tips for mindful and sustainable AI usage",
+  "type": "module",
   "keywords": [
     "ai",
     "sustainability",
@@ -12,14 +13,18 @@
   "license": "MIT",
   "main": "server/index.js",
   "scripts": {
-    "start": "node server/index.js",
+    "start": "pnpm reset && nodemon --require dotenv/config server/index.js",
     "dev": "nodemon server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "format": "prettier --write \"**/*.{html,css,js,json}\""
+    "format": "prettier --write \"**/*.{html,css,js,json}\"",
+    "db:start": "brew services start postgresql@17",
+    "reset": "cd server/config && node --require dotenv/config reset.js"
   },
   "dependencies": {
+    "dotenv": "^17.2.3",
     "express": "^5.1.0",
-    "nodemon": "^3.1.10"
+    "nodemon": "^3.1.10",
+    "pg": "^8.16.3"
   },
   "devDependencies": {
     "oxlint-tsgolint": "^0.2.0",

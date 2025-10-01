@@ -73,6 +73,24 @@ a.card:hover {
   min-width: 200px;
 }
 
+.search-group {
+  flex: 1;
+  min-width: 300px;
+}
+
+.search-group input[type="search"] {
+  width: 100%;
+}
+
+/* Search highlighting */
+.search-highlight {
+  background: #fef3c7;
+  color: #92400e;
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-weight: 600;
+}
+
 /* Tips grid layout - using PicoCSS grid system */
 .tips-grid {
   display: grid;

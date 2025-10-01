@@ -50,21 +50,19 @@ function renderTipDetail(tip, template) {
     category_slug: getCategorySlug(tip.category)
   }
 
-  // Handle implementation steps for template
-  if (tip.implementation_steps) {
-    templateData.implementation_steps = true
-    templateData.steps = tip.implementation_steps
-  }
-
   // Parse template with data
   let html = parseTemplate(template, templateData)
 
-  // Handle implementation steps rendering (since we need to loop)
-  if (tip.implementation_steps) {
-    const stepsHtml = tip.implementation_steps
-      .map((step) => `<li>${step}</li>`)
-      .join("")
-    html = html.replace(/{{#steps}}[\s\S]*?{{\/steps}}/g, stepsHtml)
+  // Convert markdown-style content to HTML
+  if (tip.content) {
+    const contentHtml = tip.content
+      .replace(/^## (.+)$/gm, '<h3>$1</h3>')
+      .replace(/^\d+\. (.+)$/gm, '<li>$1</li>')
+      .replace(/\n\n/g, '</p><p>')
+      .replace(/^\s*(<li>.*<\/li>\s*)+$/gm, '<ol>$&</ol>')
+      .replace(/^(?!<[h\d]|<ol|<\/p>)(.+)$/gm, '<p>$1</p>')
+    
+    html = html.replace('{{content}}', contentHtml)
   }
 
   container.innerHTML = html
